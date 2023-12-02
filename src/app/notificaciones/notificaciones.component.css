@@ -1,0 +1,11 @@
+/* Agrega un margen superior de 20px al contenedor del acordeón */
+.accordion {
+    margin-top: 20px;
+  }
+  
+  /* Estilo adicional según sea necesario */
+  .accordion-item {
+    background-color: #f8f9fa; /* Cambia el color de fondo según tus preferencias */
+    margin-bottom: 10px; /* Agrega un margen inferior entre los elementos del acordeón */
+  }
+  

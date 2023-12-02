@@ -1,0 +1,17 @@
+.app-root {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: url('/assets/images/fondo.png');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Agrega una nueva clase para los estilos específicos de la tarjeta */
+.card-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Agrega un fondo semi-transparente a la tarjeta si es necesario */
+    border: 1px solid #ddd; /* Agrega bordes a la tarjeta si es necesario */
+}

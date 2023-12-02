@@ -1,0 +1,113 @@
+<div class="app-root">
+<div style="background-color: #2d2c43;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <!-- Lado izquierdo -->
+        <a class="navbar-brand" href="#">Painani</a>
+       
+
+        <!-- Lado derecho -->
+        <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+                <!-- Panel de navegación -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/explorar">Explorar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/notificaciones">Notificaciones</a>
+                </li>
+                <!-- Enlace para ir al perfil -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br><br>
+</div>
+<div style="background-color: #2d2c43;">
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <div class="card mt-3 mb-3" style="background-color: #003364; border: 2px solid #00ffff;">
+                <div class="card-header" style="color: aqua;">
+                <h3 style="text-align: center;">    Agregar Noticia</h3>
+                </div>
+                <div class="card-body">
+                    <input type="text" class="form-control mt-1" [(ngModel)]="newP.titulo" 
+                           placeholder="{{newP.titulo ? '' : 'Titulo'}}" style="border: 2px solid #00ffff;"><br>
+                    <input type="text" class="form-control mt-1" [(ngModel)]="newP.descripcion" 
+                           placeholder="{{newP.descripcion ? '' : 'Descripcion'}}" style="border: 2px solid #00ffff;"><br>
+                    <input type="file" accept=".png, .jpg, jpeg, .mp4"  class="form-control" 
+                           formControlName="imagen" id="floatingFileInput" style="border: 2px solid #00ffff;">
+            
+                    <button class="btn btn-outline-primary float-end mt-3" (click)="crearNoticia()" style="border: 2px solid #00ffff;">
+                        Subir   <i class="bi bi-cloud-upload-fill"></i>
+                    </button>
+                </div>
+            </div>
+            <br><br>
+
+
+
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Noticia</th>
+                        <th>Usuario</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of preguntas">
+                        <td>{{p.no}}</td>
+                        <td>{{p.titulo}} </td>
+                        <td>{{p.correo}}</td>
+                        <td class="text-end">
+                            <img [src]="p.imageUrl" alt="Imagen de la pregunta">
+                            <button class="btn btn-outline-secondary"><i class="bi bi-arrow-right-circle-fill"></i></button>
+                            &nbsp;
+                            <button class="btn btn-outline-success" (click)="editarPregunta(p)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-fill"></i></button>
+                            &nbsp;
+                            <button class="btn btn-outline-danger" (click)="eliminarPregunta(p.id)"><i class="bi bi-trash-fill"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+ </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #003364; border: 2px solid #00ffff;">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: #00ffff;">Modificar Noticia</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control mt-1" [(ngModel)]="mod.titulo" style="border: 2px solid #00ffff;">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="border: 2px solid #00ffff; ">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="modificarPregunta()" style="border: 2px solid #00ffff; ">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+

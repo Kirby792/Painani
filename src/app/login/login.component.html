@@ -1,0 +1,55 @@
+<div class="app-root">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-chat-left-dots"></i>
+                &nbsp;Painani
+            </a>
+        </div>
+    </nav>
+    <div class="container card-container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col text-center">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        Inicio de sesion 
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
+                            <input type="email" class="form-control" placeholder="Correo" [(ngModel)]="email">
+                        </div>
+                        <div class="input-group mt-3">
+                            <div class="input-group-text">
+                                <i class="bi bi-key-fill"></i>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="pass">
+                        </div>
+                    </div> 
+
+                    <div class="alert alert-danger" role="alert" *ngIf="showError">
+                        Error de usuario o contraseña
+                    </div>
+
+                    <div class="card-footer">
+                        <button class="btn btn-primary float-end" value="Entrar" (click)="login()">
+                            <div class="spinner-border spinner-border-sm" role="status" *ngIf="showLoading">
+                            </div>
+                            Entrar
+                        </button>
+                    </div>  
+                </div>   
+                <a href="/signup" class="kink-succes">Registrarse</a>
+            </div>
+            <div class="col"></div>
+        </div>
+        
+    </div>
+</div>
+
+<br>
+
+

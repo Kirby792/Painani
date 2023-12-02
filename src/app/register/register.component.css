@@ -1,0 +1,33 @@
+.app-root {
+    height: 100vh; /* Usamos viewport height para cubrir toda la altura de la ventana */
+    margin: 0;
+    padding: 0;
+    background: url('/assets/images/logo.png');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    width: 300px;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20vh;
+}
+.card {
+    width: 300px;
+    margin: 0 auto;
+    background: rgba(64, 60, 60, 0.7);
+    color: white;
+}
+
+/* Estilo adicional para los encabezados y el texto dentro de la tarjeta */
+.card-header,
+.card-body,
+.card-footer {
+    color: white;
+}
